@@ -7,8 +7,15 @@ public class Chapter3 {
 //		stackTest();
 		
 		System.out.println("-----------------");
+		/**
+		In-Order:   Traverse left node, current node, then right [usually used for binary search trees]
+		Pre-Order:  Traverse current node, then left node, then right node.
+		Post-Order: Traverse left node, then right node, then current node.
+		Insert Node: On a binary search tree, we insert a value v, by comparing it to the root. 
+					 If v > root, we go right, and else we go left. We do this until we hit an empty spot in the tree.
+		*/
 		TreeNode a = createTree();
-		inOrderTraversal(a);
+		preOrderTraversal(a);
 		System.out.println("-----------------");
 		bfsTraversal(a);
 		
@@ -67,7 +74,7 @@ public class Chapter3 {
 		System.out.println(s.pop().data);
 	}
 	
-	private static void inOrderTraversal(TreeNode a) {		
+	private static void preOrderTraversal(TreeNode a) {		
 		Stack stack = new Stack();
 		if(a != null) {			
 			traverse(a.right, stack);
